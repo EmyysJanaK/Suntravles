@@ -1,0 +1,88 @@
+<div class="max-w-4xl mx-auto space-y-4">
+  <h2 class="text-xl font-bold text-gray-900">Reservation Criteria</h2>
+
+  <!-- Horizontal Form -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
+    <!-- Check-in Date -->
+    <div class="flex items-center gap-2">
+      <label for="checkInDate" class="text-sm font-medium text-gray-700 whitespace-nowrap">Check-in Date</label>
+      <input
+        type="date"
+        id="checkInDate"
+        [(ngModel)]="reservationCriteria.checkInDate"
+        class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+    </div>
+
+    <!-- Number of Nights -->
+    <div class="flex items-center gap-2">
+      <label for="nights" class="text-sm font-medium text-gray-700 whitespace-nowrap">Number of Nights</label>
+      <input
+        type="number"
+        id="nights"
+        [(ngModel)]="reservationCriteria.nights"
+        class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+    </div>
+  </div>
+
+
+
+  <!-- Room Details -->
+  <div>
+    <h3 class="text-sm font-bold text-gray-700 mb-2">Room Details</h3>
+
+
+    <div class="space-y-2">
+      <div
+        *ngFor="let room of reservationCriteria.rooms; let i = index"
+        class="flex items-center gap-4"
+      >
+        <label for="NoRooms" class="text-sm font-medium text-gray-700 whitespace-nowrap">Number of Rooms</label>
+        <input
+          type="number"
+          placeholder="No. of Rooms"
+          [(ngModel)]="room.noOfRooms"
+          class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+
+
+        <label for="NoAdults" class="text-sm font-medium text-gray-700 whitespace-nowrap">Number of Adults</label>
+        <input
+          type="number"
+          placeholder="No. of Adults"
+          [(ngModel)]="room.adults"
+          class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        <button
+          type="button"
+          (click)="removeRoom(i)"
+          class="px-3 py-1 bg-red-500 text-white text-sm rounded-md shadow-sm hover:bg-red-600"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+    <!-- Add Room Button (now on a new line) -->
+    <div class="mt-4">
+      <button
+        id = 'AddRoom'
+        type="button"
+        (click)="addRoom()"
+        class="w-full px-6 py-2 bg-blue-500 text-white text-sm rounded-md shadow-sm hover:bg-blue-600"
+      >
+        Add Room
+      </button>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="flex justify-end">
+    <button
+      (click)="submit()"
+      class="px-6 py-2 bg-green-500 text-white text-sm rounded-md shadow-sm hover:bg-green-600"
+    >
+      Submit
+    </button>
+  </div>
+</div>

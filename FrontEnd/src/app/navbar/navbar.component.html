@@ -1,0 +1,87 @@
+<nav class="bg-blue-600 text-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Title -->
+      <div class="flex items-center">
+        <span class="text-2xl font-bold tracking-wide">SunTravels</span>
+      </div>
+
+      <!-- Navigation Links for Desktop -->
+      <div class="hidden md:flex space-x-6">
+        <a
+          [routerLink]='[""]'
+          class="text-white text-sm font-medium hover:text-blue-200 transition duration-200"
+        >
+          Add Contract
+        </a>
+        <a
+          [routerLink]="['search']"
+          class="text-white text-sm font-medium hover:text-blue-200 transition duration-200"
+        >
+          Search
+        </a>
+        <a
+          [routerLink]="['hotel']"
+          class="text-white text-sm font-medium hover:text-blue-200 transition duration-200"
+        >
+          Add Hotels
+        </a>
+
+        <a
+        [routerLink]="['view']"
+        class="text-white text-sm font-medium hover:text-blue-200 transition duration-200"
+      >
+        Hotels & Contracts
+      </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button
+          (click)="toggleMobileMenu()"
+          class="text-white focus:outline-none focus:ring-2 focus:ring-white"
+        >
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden bg-blue-500">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a
+        [routerLink]='[""]'
+        class="block text-white text-sm font-medium hover:bg-blue-400 rounded-md px-3 py-2 transition duration-200"
+      >
+        Add Contract
+      </a>
+      <a
+        [routerLink]="['search']"
+        class="block text-white text-sm font-medium hover:bg-blue-400 rounded-md px-3 py-2 transition duration-200"
+      >
+        Search
+      </a>
+      <a
+        [routerLink]="['hotel']"
+        class="block text-white text-sm font-medium hover:bg-blue-400 rounded-md px-3 py-2 transition duration-200"
+      >
+        Add Hotels
+      </a>
+    </div>
+  </div>
+</nav>

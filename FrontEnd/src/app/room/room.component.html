@@ -1,0 +1,20 @@
+<div class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out p-6">
+  <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ roomData.hotelName }}</h3>
+  <p id="RoomType" class="text-gray-700 mb-2">
+    <strong class="font-semibold">Room Type:</strong> {{ roomData.roomType }}
+  </p>
+  <p id="Price" class="text-gray-700 mb-2">
+    <strong class="font-semibold">Price:</strong> ${{ roomData.price }} per night
+  </p>
+  <p class="text-gray-700 mb-2">
+    <strong class="font-semibold">Availability:</strong>
+    <span
+      class="text-green-600 font-semibold"
+    >
+      Available
+    </span>
+  </p>
+  <p id="AvailableRooms" class="text-gray-700">
+    <strong class="font-semibold">Available Rooms:</strong> {{ roomData.availableRooms }}
+  </p>
+</div>

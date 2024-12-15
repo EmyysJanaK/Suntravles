@@ -1,0 +1,26 @@
+/* Global styles for layout */
+
+/* Ensure the navbar sticks to the top */
+app-navbar {
+  display: block;
+  margin-bottom: 1rem; /* Add spacing below the navbar */
+}
+
+/* Add spacing around the main content area */
+router-outlet {
+  display: block;
+  margin: 0 auto; /* Center the content */
+  padding: 1rem 1rem; /* Add spacing inside */
+  max-width: 1200px; /* Restrict content width for better readability */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Footer spacing - only top margin */
+app-footer {
+  display: block;
+  margin-top: 2rem; /* Add spacing above the footer */
+  padding: 0; /* Remove any default padding */
+  background-color: #f9fafb; /* Light background for contrast */
+  border-top: 1px solid #e5e7eb; /* Subtle top border for separation */
+}

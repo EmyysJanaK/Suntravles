@@ -1,0 +1,44 @@
+<div class="min-h-screen  py-10 flex items-center justify-center">
+  <div class="bg-gradient-to-r from-indigo-500 to-blue-500 shadow-lg rounded-lg p-8 w-full max-w-md">
+    <h2 class="text-3xl font-semibold text-white mb-6 text-center">Add Hotel Information</h2>
+    <form (ngSubmit)="handleSubmit()" class="space-y-6">
+      <!-- Hotel Name Input -->
+      <div>
+        <label for="hotelName" class="block text-sm font-medium text-gray-200 mb-1">Hotel Name</label>
+        <input
+          type="text"
+          id="hotelName"
+          name="hotelName"
+          [(ngModel)]="hotelData.hotelName"
+          placeholder="Enter Hotel Name"
+          class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+          required
+        />
+      </div>
+
+      <!-- Location Input -->
+      <div>
+        <label for="location" class="block text-sm font-medium text-gray-200 mb-1">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          [(ngModel)]="hotelData.location"
+          placeholder="Enter Location"
+          class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+          required
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="mt-6">
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

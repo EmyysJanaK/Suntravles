@@ -1,0 +1,42 @@
+<div class="max-w-full rounded overflow-hidden shadow-lg bg-white flex m-4">
+  <!-- Image Section with fixed size -->
+  <img class="w-64 h-64 object-cover" src="">
+
+  <!-- Information Section -->
+  <div class="w-2/3 p-4">
+    <h2 class="text-xl font-semibold">{{ hotelData.hotelName }}</h2>
+    <p class="text-gray-600 text-sm">{{ hotelData.location }}</p>
+    <p class="text-gray-700">Some text content that explains more about the card's information.</p>
+
+    <!-- Action Buttons -->
+    <div class="mt-4 flex space-x-4">
+      <button (click)="onUpdate(hotelData)" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Update
+      </button>
+      <button (click)="onDeleteClick()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+        Delete
+      </button>
+      <button (click)="onViewContract(hotelData.hotelId)" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+        {{ isViewingContracts ? 'Hide Contracts' : 'View Contracts' }}
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- Warning Popup -->
+<app-delete-warning-popup-component
+  [unit]="'hotel'"
+  *ngIf="isDeletePopupVisible"
+  (deleteConfirmed)="onDelete(hotelData.hotelId)"
+  (deleteCancelled)="onCancelDelete()">
+</app-delete-warning-popup-component>
+
+
+<!-- Contracts Section -->
+<div *ngIf="isViewingContracts">
+  <app-contract
+    *ngFor="let contract of contracts"
+    [contractData]="contract">
+  </app-contract>
+</div>
